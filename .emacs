@@ -22,6 +22,10 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; force to open new buffers (build/run...) horizontally
+(setq split-height-threshold 0)
+(setq split-width-threshold nil)
+
 ;; Enable linum-mode
 (global-linum-mode)
 
