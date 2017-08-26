@@ -138,6 +138,11 @@
 ;; Elpy
 (elpy-enable) ;; install pip install rope jedi flake8 importmagic
 
+;; GDB
+(setq gdb-show-main t)
+(setq-default display-buffer-reuse-frames t)
+
+;; C/C++
 (c-add-style "mb-style"
              '("stroustrup"
                (c-basic-offset . 4)
