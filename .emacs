@@ -26,6 +26,9 @@
 (setq split-height-threshold 0)
 (setq split-width-threshold nil)
 
+;; force compilation scrolling
+(setq compilation-scroll-output t)
+
 ;; Enable linum-mode
 (global-linum-mode)
 
