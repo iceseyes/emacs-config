@@ -12,7 +12,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags helm-projectile helm-gitignore helm-git helm-flycheck company-irony-c-headers company-irony irony clang-format)))
+    (flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags helm-projectile helm-gitignore helm-git helm-flycheck company-irony-c-headers company-irony irony clang-format dockerfile-mode)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -73,6 +73,7 @@
 (use-package web-mode)
 (use-package less-css-mode)
 (use-package clang-format)
+(use-package dockerfile-mode)
 (use-package volatile-highlights
   :init
   (volatile-highlights-mode t))
@@ -114,7 +115,7 @@
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
 
-;; Configurations
+;; Helm Configurations
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
       helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
       helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
@@ -177,6 +178,9 @@
       kill-whole-line t  ; if NIL, kill whole line and move the next line up
       )
 
+;; Dockerfile-mode
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+
 ;; use space to indent by default
 (setq-default indent-tabs-mode nil
               tab-width 4)
@@ -189,7 +193,12 @@
 
 ;; Reformat buffer if .clang-format exists in the projectile root.
 (defun clang-format-buffer-smart ()
-  (when (file-exists-p (expand-file-name ".clang-format" (projectile-project-root)))
+  (when
+      (and
+       (file-exists-p (expand-file-name ".clang-format" (projectile-project-root)))
+       (member
+        (file-name-extension (file-name-nondirectory (buffer-file-name)))
+        '("cpp" "cc" "c" "C" "cxx" "h" "hpp" "hh" "hxx")))                                         
     (clang-format-buffer)))
 
 
@@ -512,7 +521,9 @@ Position the cursor at it's beginning, according to the current mode."
 
 ;; Add automatic clang-format on save only when .clang-format is defined
 ;; in project(ile) root.
-(add-hook 'before-save-hook 'clang-format-buffer-smart)
+(add-hook 'c++-mode-hook
+          (lambda()
+            (add-hook 'before-save-hook 'clang-format-buffer-smart)))
 
 (add-hook 'sh-mode-hook (lambda ()
                           (setq tab-width 4)))
