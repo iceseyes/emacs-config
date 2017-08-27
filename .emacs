@@ -12,7 +12,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags helm-projectile helm-gitignore helm-git helm-flycheck company-irony-c-headers company-irony irony clang-format dockerfile-mode)))
+    (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags helm-projectile helm-gitignore helm-git helm-flycheck company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -74,6 +74,7 @@
 (use-package less-css-mode)
 (use-package clang-format)
 (use-package dockerfile-mode)
+(use-package yaml-mode)
 (use-package volatile-highlights
   :init
   (volatile-highlights-mode t))
@@ -105,6 +106,13 @@
   :bind (("C-;" . iedit-mode))
   :init
   (setq iedit-toggle-key-default nil))
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
 (require 'rtags-helm)
 (require 'company-rtags)
 (require 'flycheck-rtags)
@@ -180,6 +188,9 @@
 
 ;; Dockerfile-mode
 (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+
+;; Yaml Mode
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 ;; use space to indent by default
 (setq-default indent-tabs-mode nil
