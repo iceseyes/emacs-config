@@ -445,15 +445,17 @@ Position the cursor at it's beginning, according to the current mode."
            (local-set-key (kbd "s-i") 'helm-css-scss)
            (local-set-key (kbd "s-I") 'helm-css-scss-back-to-last-point))))
 
-(global-set-key (kbd "C-n") 'projectile-find-file)
+(global-set-key (kbd "C-S-n") 'projectile-find-file)
 (global-set-key (kbd "C-<tab>") 'projectile-find-other-file)
+(global-set-key (kbd "M-n") 'projectile-switch-to-buffer)
+(global-set-key (kbd "M-S-n") 'projectile-switch-to-buffer-other-window)
 (global-set-key (kbd "C-<f10>") 'projectile-test-project)
 (global-set-key (kbd "<f2>") 'projectile-speedbar-open-current-buffer-in-tree)
 
 (global-set-key (kbd "M-.") 'rtags-find-symbol-at-point)
-(global-set-key (kbd "C-M-.") 'rtags-find-references-at-point)
-(global-set-key (kbd "M-n") 'rtags-find-symbol)
-(global-set-key (kbd "C-M-n") 'rtags-find-references)
+(global-set-key (kbd "M-S-.") 'rtags-find-references-at-point)
+(global-set-key (kbd "C-n") 'rtags-find-symbol)
+(global-set-key (kbd "C-S-r") 'rtags-find-references)
 (global-set-key (kbd "M-<left>") 'rtags-location-stack-back)
 (global-set-key (kbd "M-<right>") 'rtags-location-stack-forward)
 (global-unset-key (kbd "C-c r ."))
@@ -492,8 +494,8 @@ Position the cursor at it's beginning, according to the current mode."
 
 (define-key c-mode-map [(?\M-\r)] 'company-complete)
 (define-key c++-mode-map [(?\M-\r)] 'company-complete)
-(define-key c-mode-map   (kbd "C-S-N") 'rtags-find-file)
-(define-key c++-mode-map (kbd "C-S-N") 'rtags-find-file)
+;(define-key c-mode-map   (kbd "C-S-N") 'rtags-find-file)
+;(define-key c++-mode-map (kbd "C-S-N") 'rtags-find-file)
 
 (define-key elpy-mode-map (kbd "M-\r") 'elpy-company-backend)
 (define-key elpy-mode-map (kbd "M-n") 'elpy-rgrep-symbol)
