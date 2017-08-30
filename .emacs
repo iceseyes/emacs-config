@@ -55,7 +55,7 @@
 (use-package company)
 (add-hook 'after-init-hook 'global-company-mode)
 (setq company-backends (delete 'company-semantic company-backends))
-(setq company-backends (delete 'company-clang company-backends))
+;;(setq company-backends (delete 'company-clang company-backends))
 
 ;; Helm Config
 (use-package helm)
@@ -502,10 +502,7 @@ Position the cursor at it's beginning, according to the current mode."
 
 (eval-after-load 'company
   '(add-to-list
-    'company-backends 'company-rtags))
-(eval-after-load 'company
-  '(add-to-list
-    'company-backends '(company-irony-c-headers company-irony)))
+    'company-backends '(company-irony-c-headers company-irony company-rtags)))
 
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
