@@ -5,15 +5,17 @@
   (setq-local flycheck-highlighting-mode nil) ;; RTags creates more accurate overlays.
   (setq-local flycheck-check-syntax-automatically nil))
 
-(setq rtags-completions-enabled t
-      rtags-autostart-diagnostics t
-      rtags-use-helm t)
+(setq rtags-autostart-diagnostics t)
+(rtags-diagnostics)
+
+(setq rtags-completions-enabled t)
+(setq rtags-use-helm t)
+
 
 (eval-after-load 'company
   '(add-to-list
     'company-backends 'company-rtags))
 
-;(rtags-diagnostics)
 (rtags-enable-standard-keybindings)
 
 ;; Start RDM Server

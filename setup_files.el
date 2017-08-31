@@ -10,9 +10,3 @@
 ;; Yaml Mode
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
-; Add cmake listfile names to the mode list.
-(setq auto-mode-alist
-	  (append
-	   '(("CMakeLists\\.txt\\'" . cmake-mode))
-	   '(("\\.cmake\\'" . cmake-mode))
-	   auto-mode-alist))
