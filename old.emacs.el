@@ -1,56 +1,5 @@
-;; Setup Emacs Window
-(when window-system
-  (set-frame-size (selected-frame) 160 50)
-  (set-frame-position (selected-frame) 80 50))
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (manoj-dark)))
- '(inhibit-startup-screen t)
- '(package-selected-packages
-   (quote
-    (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags helm-projectile helm-gitignore helm-git helm-flycheck company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode)))
- '(show-paren-mode t)
- '(tool-bar-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-;; force to open new buffers (build/run...) horizontally
-(setq split-height-threshold 0)
-(setq split-width-threshold nil)
-
-;; force compilation scrolling
-(setq compilation-scroll-output t)
-
-;; Enable linum-mode
-(global-linum-mode)
-
-;; Setup packaging system
-(require 'package) ;; You might already have this line
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
-
-(when (< emacs-major-version 24)
-  (add-to-list 'package-archives
-               '("gnu" . "http://elpa.gnu.org/packages/")))
-
-(package-initialize)
-
-(when (not package-archive-contents)
-    (package-refresh-contents))
-
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
-
-(require 'use-package)
-(setq use-package-always-ensure t)
+(provide 'old.emacs)
+;; prev version.. to migrate to new configuration
 
 (use-package company)
 (add-hook 'after-init-hook 'global-company-mode)
@@ -62,13 +11,16 @@
 (use-package helm-css-scss)
 (use-package cl)
 (use-package rtags)
+(use-package helm-rtags)
 (use-package company-irony-c-headers)
+(use-package company-rtags)
 (use-package helm-projectile)
 (use-package projectile-speedbar)
 (use-package flycheck-irony)
 (use-package helm-flycheck)
 (use-package flycheck-color-mode-line)
 (use-package flycheck-pos-tip)
+(use-package flycheck-rtags)
 (use-package elpy)
 (use-package web-mode)
 (use-package less-css-mode)
@@ -113,7 +65,7 @@
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
-(require 'rtags-helm)
+(require 'helm-rtags)
 (require 'company-rtags)
 (require 'flycheck-rtags)
 (require 'helm-config)
@@ -167,6 +119,8 @@
 (setq company-idle-delay 0)
 (setq flycheck-check-syntax-automatically '(mode-enabled save new-line idle-change))
 (setq clang-format-style-option "google")
+
+(rtags-diagnostics)
 
 (setq web-mode-engines-alist '(("django" . "\\.html\\'")))
 
@@ -254,7 +208,9 @@
 
 (defun my-flycheck-rtags-setup ()
   (flycheck-select-checker 'rtags)
-  (setq-local flycheck-highlighting-mode nil)) ;; RTags creates more accurate overlays.
+  (setq-local flycheck-highlighting-mode nil) ;; RTags creates more accurate overlays.
+  (setq-local flycheck-check-syntax-automatically nil))
+
 
 (defun prelude-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.
