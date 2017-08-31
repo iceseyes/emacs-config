@@ -9,8 +9,12 @@
       rtags-autostart-diagnostics t
       rtags-use-helm t)
 
-(rtags-diagnostics)
-;;(rtags-enable-standard-keybindings)
+(eval-after-load 'company
+  '(add-to-list
+    'company-backends 'company-rtags))
+
+;(rtags-diagnostics)
+(rtags-enable-standard-keybindings)
 
 ;; Start RDM Server
 (add-hook 'find-file-hook 'rtags-start-process-maybe)

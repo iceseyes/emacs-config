@@ -6,8 +6,8 @@
 (require 'setup_helm)
 (require 'setup_projectile)
 (require 'setup_flycheck)
-(require 'setup_python)
 (require 'setup_rtags)
+(require 'setup_python)
 (require 'setup_cpp)
 (require 'setup_web)
 
@@ -15,3 +15,4 @@
 (require 'setup_files)
 (require 'setup_editor)
 (require 'setup_keys)
+(require 'setup_hooks)

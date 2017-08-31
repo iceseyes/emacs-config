@@ -45,6 +45,7 @@
 
 ;; Company-mode
 (use-package company)
+(use-package company-irony)
 (use-package company-irony-c-headers)
 (use-package company-rtags)
 

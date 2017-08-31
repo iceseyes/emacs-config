@@ -10,7 +10,7 @@
 (show-paren-mode t)
 
 ;; No Toolbar, this is emacs and you have 10 fingers!
-(tool-bar-mode nil)
+(tool-bar-mode -1)
 
 ;; Setup Emacs Window
 (when window-system

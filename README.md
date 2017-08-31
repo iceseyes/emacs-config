@@ -23,6 +23,19 @@ For python install this packages
 pip install rope jedi flake8 importmagic
 ```
 
+Checkout rtags project, compile and install it (https://github.com/Andersbakken/rtags).
+
+Install SystemD Units for rdm:
+
+``` bash
+mkdir -p ~/.config/systemd/user
+cp ~./emacs.d/emacs-config/systemd/user/rdm* ~/.config/systemd/user
+systemctl --user daemon-reload
+systemctl --user start rdm.socket rdm-restore.service
+```
+
+Run Emacs
+
 ## Known problems
 
 Sometime you can receive the error `error: Required feature 'pyvenv' was not provided`. If this happen reinstall pyvenv and elpy in this way:
