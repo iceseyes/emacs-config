@@ -26,3 +26,6 @@
 
 ;; Enable Line Numbers Mode
 (global-linum-mode)
+
+;; try to reuse current buffers
+(setq-default display-buffer-reuse-frames t)

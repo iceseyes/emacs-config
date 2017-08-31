@@ -2,4 +2,16 @@
 
 (require 'setup_ui)
 (require 'setup_package_system)
-(require 'old.emacs)
+(require 'setup_company)
+(require 'setup_helm)
+(require 'setup_projectile)
+(require 'setup_flycheck)
+(require 'setup_python)
+(require 'setup_rtags)
+(require 'setup_cpp)
+(require 'setup_web)
+
+(require 'setup_snippets)
+(require 'setup_files)
+(require 'setup_editor)
+(require 'setup_keys)
