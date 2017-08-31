@@ -1,75 +1,8 @@
 (provide 'old.emacs)
 ;; prev version.. to migrate to new configuration
 
-(use-package company)
 (add-hook 'after-init-hook 'global-company-mode)
 (setq company-backends (delete 'company-semantic company-backends))
-;;(setq company-backends (delete 'company-clang company-backends))
-
-;; Helm Config
-(use-package helm)
-(use-package helm-css-scss)
-(use-package cl)
-(use-package rtags)
-(use-package helm-rtags)
-(use-package company-irony-c-headers)
-(use-package company-rtags)
-(use-package helm-projectile)
-(use-package projectile-speedbar)
-(use-package flycheck-irony)
-(use-package helm-flycheck)
-(use-package flycheck-color-mode-line)
-(use-package flycheck-pos-tip)
-(use-package flycheck-rtags)
-(use-package elpy)
-(use-package web-mode)
-(use-package less-css-mode)
-(use-package clang-format)
-(use-package dockerfile-mode)
-(use-package yaml-mode)
-(use-package volatile-highlights
-  :init
-  (volatile-highlights-mode t))
-(use-package undo-tree
-  :init
-  (global-undo-tree-mode 1))
-(use-package yasnippet
-  :defer t
-  :init
-  (add-hook 'prog-mode-hook 'yas-minor-mode))
-(use-package clean-aindent-mode
-  :init
-  (add-hook 'prog-mode-hook 'clean-aindent-mode))
-(use-package dtrt-indent
-  :init
-  (dtrt-indent-mode 1)
-  (setq dtrt-indent-verbosity 0))
-(use-package ws-butler
-  :init
-  (add-hook 'prog-mode-hook 'ws-butler-mode)
-  (add-hook 'text-mode 'ws-butler-mode)
-  (add-hook 'fundamental-mode 'ws-butler-mode))
-(use-package anzu
-  :init
-  (global-anzu-mode)
-  (global-set-key (kbd "M-%") 'anzu-query-replace)
-  (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp))
-(use-package iedit
-  :bind (("C-;" . iedit-mode))
-  :init
-  (setq iedit-toggle-key-default nil))
-(use-package markdown-mode
-  :ensure t
-  :commands (markdown-mode gfm-mode)
-  :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode))
-  :init (setq markdown-command "multimarkdown"))
-(require 'helm-rtags)
-(require 'company-rtags)
-(require 'flycheck-rtags)
-(require 'helm-config)
-
 
 ;; Use curl for google requests
 (when (executable-find "curl")
