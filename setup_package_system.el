@@ -129,7 +129,7 @@
   :init (setq markdown-command "multimarkdown"))
 
 ;; Import some module
-(require 'helm-rtags)
+;(require 'helm-rtags)
 (require 'company-rtags)
 (require 'flycheck-rtags)
 (require 'helm-config)

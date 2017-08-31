@@ -5,13 +5,13 @@
   (setq helm-google-suggest-use-curl-p t))
 
 ;; Helm Configurations
-(setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
-      helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
-      helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
-      helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
+(setq helm-split-window-in-side-p           t
+      helm-move-to-line-cycle-in-source     t
+      helm-ff-search-library-in-sexp        t
+      helm-scroll-amount                    8
       helm-ff-file-name-history-use-recentf t
       helm-echo-input-in-header-line        t
-      helm-M-x-fuzzy-match                  t ; optional fuzzy matching for helm-M-x
+      helm-M-x-fuzzy-match                  t
       helm-buffers-fuzzy-matching           t
       helm-recentf-fuzzy-match              t
       helm-apropos-fuzzy-match              t
