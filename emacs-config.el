@@ -9,6 +9,7 @@
 (require 'setup_rtags)
 (require 'setup_python)
 (require 'setup_cpp)
+(require 'setup_gdb)
 (require 'setup_web)
 
 (require 'setup_snippets)
