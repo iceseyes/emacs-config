@@ -36,3 +36,11 @@
 (add-hook 'c++-mode-hook
           (lambda()
             (add-hook 'before-save-hook 'clang-format-buffer-smart)))
+
+;; Setup cpputils-cmake
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (if (derived-mode-p 'c-mode 'c++-mode)
+                (cppcm-reload-all)
+              )))
+(setq cppcm-build-dirname "build/Debug")

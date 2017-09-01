@@ -18,3 +18,5 @@
                                           newline
                                           newline-mark))
                             (whitespace-mode 1)))
+
+(add-hook 'cmake-mode-hook 'cmake-font-lock-activate)

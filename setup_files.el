@@ -10,3 +10,6 @@
 ;; Yaml Mode
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
+;; CMake mode
+(add-to-list 'auto-mode-alist '("CMakeLists\\.txt\\'" . cmake-mode))
+(add-to-list 'auto-mode-alist '("\\.cmake\\'" . cmake-mode))

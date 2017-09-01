@@ -5,7 +5,7 @@
 ;; (see below)
 (setq package-selected-packages
       (quote
-       (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags helm-projectile helm-gitignore helm-git helm-flycheck company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode flycheck-rtags helm-rtags company-rtags ac-rtags js3-mode pyvenv)))
+       (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags helm-projectile helm-gitignore helm-git helm-flycheck company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode flycheck-rtags helm-rtags company-rtags ac-rtags js3-mode pyvenvi cmake-mode cmake-font-lock cpputils-cmake)))
 
 ;; Load Package module
 (require 'package)
@@ -79,6 +79,11 @@
 
 ;; Yaml
 (use-package yaml-mode)
+
+;; Cmake
+(use-package cmake-mode)
+(use-package cmake-font-lock)
+(use-package cpputils-cmake)
 
 ;; Highlights undo, yank, search...
 (use-package volatile-highlights
