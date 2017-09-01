@@ -2,8 +2,8 @@
 
 (require 'setup_ui)
 (require 'setup_package_system)
-;(require 'setup_helm)
 (require 'setup_ivy)
+(require 'setup_modeline)
 (require 'setup_company)
 (require 'setup_projectile)
 (require 'setup_flycheck)

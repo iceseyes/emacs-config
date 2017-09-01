@@ -5,7 +5,7 @@
 ;; (see below)
 (setq package-selected-packages
       (quote
-       (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode flycheck-rtags  company-rtags ac-rtags js3-mode pyvenvi cmake-mode cmake-font-lock counsel )))
+       (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode flycheck-rtags  company-rtags ac-rtags js3-mode pyvenvi cmake-mode cmake-font-lock counsel powerline)))
 
 ;; Load Package module
 (require 'package)
@@ -59,6 +59,9 @@
 (use-package counsel)
 (use-package counsel-projectile)
 (use-package ivy-rtags)
+
+;; Powerline
+(use-package powerline)
 
 ;; Helm
 ;(use-package helm)
