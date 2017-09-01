@@ -14,12 +14,12 @@
 
 ;; Setup Emacs Window
 (when window-system
-  (set-frame-size (selected-frame) 160 50)
+  (set-frame-size (selected-frame) 180 50)
   (set-frame-position (selected-frame) 80 50))
 
 ;; force to open new buffers (build/run...) horizontally
-(setq split-height-threshold 0)
-(setq split-width-threshold nil)
+(setq split-height-threshold 20)
+(setq split-width-threshold 80)
 
 ;; force compilation scrolling
 (setq compilation-scroll-output t)

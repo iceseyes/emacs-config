@@ -6,24 +6,29 @@
   (define-key irony-mode-map [remap complete-symbol]
     'irony-completion-at-point-async))
 
-;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-unset-key (kbd "C-x c"))
+;; unbind ivy keys
+(global-unset-key (kbd "M-n"))
+(global-unset-key (kbd "M-p"))
 
-; Global Helm Bindings
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-c h g") 'helm-google-suggest)
+; Global Ivy Bindings
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-x C-n") 'counsel-describe-function)
+(global-set-key (kbd "C-x C-S-n") 'counsel-describe-variable)
+(global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "C-x C-l") 'counsel-find-library)
+(global-set-key (kbd "C-x C-i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
 
-;; Set local keybind map for css-mode / scss-mode / less-css-mode
-(dolist ($hook '(css-mode-hook scss-mode-hook less-css-mode-hook))
-  (add-hook
-   $hook (lambda ()
-           (local-set-key (kbd "s-i") 'helm-css-scss)
-           (local-set-key (kbd "s-I") 'helm-css-scss-back-to-last-point))))
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+
+;; Projectile
 (global-set-key (kbd "C-S-n") 'projectile-find-file)
 (global-set-key (kbd "C-<tab>") 'projectile-find-other-file)
 (global-set-key (kbd "M-b") 'projectile-switch-to-buffer)
@@ -52,17 +57,6 @@
 (global-set-key (kbd "C-c i") 'clang-format-region)
 (global-set-key (kbd "C-S-f") 'clang-format-buffer)
 
-
-(eval-after-load 'flycheck
-  '(define-key flycheck-mode-map (kbd "C-c ! h") 'helm-flycheck))
-
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
-(define-key helm-map (kbd "C-z")  'helm-select-action)
-(define-key minibuffer-local-map (kbd "C-c C-l") 'helm-minibuffer-history)
-
-(define-key isearch-mode-map (kbd "s-i") 'helm-css-scss-from-isearch)
-(define-key helm-css-scss-map (kbd "s-i") 'helm-css-scss-multi-from-helm-css-scss)
 
 (define-key c-mode-map [(?\M-\r)] 'company-complete)
 (define-key c++-mode-map [(?\M-\r)] 'company-complete)

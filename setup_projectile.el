@@ -2,6 +2,7 @@
 
 ;; Projectile
 (projectile-mode)
+(counsel-projectile-on)
 
 (setq projectile-enable-caching t)
 (setq projectile-project-compilation-cmd "")

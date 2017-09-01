@@ -5,7 +5,7 @@
 ;; (see below)
 (setq package-selected-packages
       (quote
-       (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags helm-projectile helm-gitignore helm-git helm-flycheck company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode flycheck-rtags helm-rtags company-rtags ac-rtags js3-mode pyvenvi cmake-mode cmake-font-lock)))
+       (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode flycheck-rtags  company-rtags ac-rtags js3-mode pyvenvi cmake-mode cmake-font-lock counsel )))
 
 ;; Load Package module
 (require 'package)
@@ -55,12 +55,17 @@
 (use-package flycheck-pos-tip)
 (use-package flycheck-rtags)
 
+;; ivy
+(use-package counsel)
+(use-package counsel-projectile)
+(use-package ivy-rtags)
+
 ;; Helm
-(use-package helm)
-(use-package helm-css-scss)
-(use-package helm-rtags)
-(use-package helm-projectile)
-(use-package helm-flycheck)
+;(use-package helm)
+;(use-package helm-css-scss)
+;(use-package helm-rtags)
+;(use-package helm-projectile)
+;(use-package helm-flycheck)
 
 ;; Python mode
 (use-package pyvenv)
@@ -133,7 +138,6 @@
   :init (setq markdown-command "multimarkdown"))
 
 ;; Import some module
-(require 'helm-rtags)
+(require 'ivy-rtags)
 (require 'company-rtags)
 (require 'flycheck-rtags)
-(require 'helm-config)
