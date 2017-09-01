@@ -1,9 +1,0 @@
-[Unit]
-Description=Force Rtags daemon restor projects
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/rc -w
-
-[Install]
-WantedBy=default.target
