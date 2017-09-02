@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: C++ Class declaration
+# key: class
+# --
+class $1 {
+public:
+    $1($0);
+    $1(const $1 &other);
+    $1($1 &&other);
+    virtual ~$1();
+
+    $1 &operator=(const $1 &other);
+    $1 &operator=($1 &&other);
+
+private:
+};
