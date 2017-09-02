@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Google Test C++ Function
+# key: TEST
+# --
+TEST($1, $2) {
+    $0
+}

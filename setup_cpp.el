@@ -31,9 +31,6 @@
 (add-hook 'irony-mode-hook 'my-irony-mode-hook)
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
-(define-key c-mode-map [(tab)] 'company-complete)
-(define-key c++-mode-map [(tab)] 'company-complete)
-
 ;; Add automatic clang-format on save only when .clang-format is defined
 ;; in project(ile) root.
 (add-hook 'c++-mode-hook
@@ -46,4 +43,5 @@
             (if (derived-mode-p 'c-mode 'c++-mode)
                 (cppcm-reload-all)
               )))
+
 (setq cppcm-build-dirname "build/Debug")

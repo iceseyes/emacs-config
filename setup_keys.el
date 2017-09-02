@@ -57,7 +57,7 @@
 (global-set-key (kbd "C-c i") 'clang-format-region)
 (global-set-key (kbd "C-S-f") 'clang-format-buffer)
 
-
+;; C/C++
 (define-key c-mode-map [(?\M-\r)] 'company-complete)
 (define-key c++-mode-map [(?\M-\r)] 'company-complete)
 
