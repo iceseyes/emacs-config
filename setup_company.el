@@ -9,7 +9,7 @@
 (eval-after-load 'company
   '(add-to-list
     'company-backends
-    '(company-irony-c-headers company-irony company-rtags)))
+    '(company-irony-c-headers company-irony company-rtags company-tern)))
 
 (eval-after-load 'company
   '(add-hook 'flycheck-mode-hook 'flycheck-irony-setup))

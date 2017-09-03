@@ -3,6 +3,7 @@
 ;; Web files
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.htm?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; Dockerfile-mode
 (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))

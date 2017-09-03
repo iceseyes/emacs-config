@@ -8,8 +8,8 @@
 (setq web-mode-enable-auto-expanding t)
 (setq web-mode-enable-css-colorization t)
 
-(eval-after-load 'js3-mode
-  '(add-hook 'js3-mode-hook
+(eval-after-load 'js2-mode
+  '(add-hook 'js2-mode-hook
              (lambda ()
                (add-hook 'before-save-hook 'web-beautify-js-buffer t t))))
 

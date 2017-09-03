@@ -79,13 +79,16 @@
 (define-key c++-mode-map (kbd "M-<left>") 'rtags-location-stack-back)
 (define-key c++-mode-map (kbd "M-<right>") 'rtags-location-stack-forward)
 
-(define-key elpy-mode-map (kbd "(?\M-\r)") 'elpy-company-backend)
+;; Python
 (define-key elpy-mode-map (kbd "M-n") 'elpy-rgrep-symbol)
 (define-key elpy-mode-map (kbd "M-<left>") 'pop-tag-mark)
 (define-key elpy-mode-map (kbd "C-S-N") 'elpy-find-file)
 
-(eval-after-load 'js3-mode
-  '(define-key js3-mode-map (kbd "C-S-f") 'web-beautify-js))
+;; JS/Web
+(define-key js2-mode-map [(?\M-\r)] 'company-complete)
+
+(eval-after-load 'js2-mode
+  '(define-key js2-mode-map (kbd "C-S-f") 'web-beautify-js))
 
 (eval-after-load 'json-mode
   '(define-key json-mode-map (kbd "C-S-f") 'web-beautify-js))
