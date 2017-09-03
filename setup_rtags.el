@@ -9,13 +9,6 @@
 (rtags-diagnostics)
 
 (setq rtags-completions-enabled t)
-(setq rtags-use-helm t)
-
-
-;(eval-after-load 'company
-;  '(add-to-list
-;    'company-backends 'company-rtags))
-
 (rtags-enable-standard-keybindings)
 
 ;; Start RDM Server

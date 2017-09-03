@@ -5,7 +5,7 @@
 ;; (see below)
 (setq package-selected-packages
       (quote
-       (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode flycheck-rtags  company-rtags ac-rtags js3-mode pyvenvi cmake-mode cmake-font-lock counsel powerline)))
+       (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode flycheck-rtags  company-rtags ac-rtags js3-mode pyvenvi cmake-mode cmake-font-lock counsel powerline npm-mode)))
 
 ;; Load Package module
 (require 'package)
@@ -78,6 +78,8 @@
 (use-package web-mode)
 (use-package less-css-mode)
 (use-package js3-mode)
+(use-package npm-mode)
+(use-package web-beautify)  ;; needs: npm -g install js-beautify
 
 ;; Clang format
 (use-package clang-format)

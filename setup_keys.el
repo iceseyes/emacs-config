@@ -79,10 +79,22 @@
 (define-key c++-mode-map (kbd "M-<left>") 'rtags-location-stack-back)
 (define-key c++-mode-map (kbd "M-<right>") 'rtags-location-stack-forward)
 
-;(define-key c-mode-map   (kbd "C-S-N") 'rtags-find-file)
-;(define-key c++-mode-map (kbd "C-S-N") 'rtags-find-file)
-
-(define-key elpy-mode-map (kbd "M-\r") 'elpy-company-backend)
+(define-key elpy-mode-map (kbd "(?\M-\r)") 'elpy-company-backend)
 (define-key elpy-mode-map (kbd "M-n") 'elpy-rgrep-symbol)
 (define-key elpy-mode-map (kbd "M-<left>") 'pop-tag-mark)
 (define-key elpy-mode-map (kbd "C-S-N") 'elpy-find-file)
+
+(eval-after-load 'js3-mode
+  '(define-key js3-mode-map (kbd "C-S-f") 'web-beautify-js))
+
+(eval-after-load 'json-mode
+  '(define-key json-mode-map (kbd "C-S-f") 'web-beautify-js))
+
+(eval-after-load 'sgml-mode
+  '(define-key html-mode-map (kbd "C-S-f") 'web-beautify-html))
+
+(eval-after-load 'web-mode
+  '(define-key web-mode-map (kbd "C-S-f") 'web-beautify-html))
+
+(eval-after-load 'css-mode
+  '(define-key css-mode-map (kbd "C-S-f") 'web-beautify-css))
