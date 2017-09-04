@@ -5,7 +5,7 @@
 ;; (see below)
 (setq package-selected-packages
       (quote
-       (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode flycheck-rtags  company-rtags ac-rtags js2-mode pyvenvi cmake-mode cmake-font-lock counsel powerline npm-mode web-beautify company-tern)))
+       (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode flycheck-rtags  company-rtags ac-rtags js2-mode pyvenvi cmake-mode cmake-font-lock counsel powerline npm-mode web-beautify company-tern company-jedi)))
 
 ;; Load Package module
 (require 'package)
@@ -49,6 +49,7 @@
 (use-package company-irony-c-headers)
 (use-package company-rtags)
 (use-package company-tern)  ;; needs: npm -g install tern
+(use-package company-jedi)
 
 ;; flycheck
 (use-package flycheck-irony)

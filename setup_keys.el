@@ -80,6 +80,7 @@
 (define-key c++-mode-map (kbd "M-<right>") 'rtags-location-stack-forward)
 
 ;; Python
+(define-key elpy-mode-map [(?\M-\r)] 'company-complete)
 (define-key elpy-mode-map (kbd "M-n") 'elpy-rgrep-symbol)
 (define-key elpy-mode-map (kbd "M-<left>") 'pop-tag-mark)
 (define-key elpy-mode-map (kbd "C-S-N") 'elpy-find-file)

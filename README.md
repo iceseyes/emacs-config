@@ -20,7 +20,7 @@ or just copy `config.emacs` into `~/.emacs`.
 For python install this packages 
 
 ``` bash
-pip install rope jedi flake8 importmagic
+easy_install --user rope jedi flake8 importmagic autopep8 yapf
 ```
 
 Checkout rtags project, compile and install it (https://github.com/Andersbakken/rtags).
@@ -33,6 +33,8 @@ cp ~./emacs.d/emacs-config/systemd/user/rdm* ~/.config/systemd/user
 systemctl --user daemon-reload
 systemctl --user start rdm.socket rdm-restore.service
 ```
+
+For Javascript install *Node.js*, than with *npm* install **tern** and **js-beautify**.
 
 Run Emacs
 
