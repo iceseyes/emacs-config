@@ -5,7 +5,7 @@
 ;; (see below)
 (setq package-selected-packages
       (quote
-       (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode flycheck-rtags  company-rtags ac-rtags js2-mode pyvenvi cmake-mode cmake-font-lock counsel powerline npm-mode web-beautify company-tern company-jedi)))
+       (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode flycheck-rtags  company-rtags ac-rtags js2-mode pyvenvi cmake-mode cmake-font-lock counsel powerline npm-mode web-beautify company-tern company-jedi projectile neotree)))
 
 ;; Load Package module
 (require 'package)
@@ -41,7 +41,10 @@
 (use-package rtags)
 
 ;; projectile
-(use-package projectile-speedbar)
+(use-package projectile)
+
+;; neotree
+(use-package neotree)
 
 ;; Company-mode
 (use-package company)
@@ -64,13 +67,6 @@
 
 ;; Powerline
 (use-package powerline)
-
-;; Helm
-;(use-package helm)
-;(use-package helm-css-scss)
-;(use-package helm-rtags)
-;(use-package helm-projectile)
-;(use-package helm-flycheck)
 
 ;; Python mode
 (use-package pyvenv)

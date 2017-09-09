@@ -23,10 +23,11 @@
              (lambda ()
                (add-hook 'before-save-hook 'web-beautify-html-buffer t t))))
 
-(eval-after-load 'web-mode
-  '(add-hook 'web-mode-hook
-             (lambda ()
-               (add-hook 'before-save-hook 'web-beautify-html-buffer t t))))
+;; Rischia di spezzare tag django o underscore...
+;;(eval-after-load 'web-mode
+;;  '(add-hook 'web-mode-hook
+;;             (lambda ()
+;;               (add-hook 'before-save-hook 'web-beautify-html-buffer t t))))
 
 (eval-after-load 'css-mode
   '(add-hook 'css-mode-hook

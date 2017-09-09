@@ -10,6 +10,24 @@
 (global-unset-key (kbd "M-n"))
 (global-unset-key (kbd "M-p"))
 
+;; Global
+(global-set-key (kbd "C-<next>") 'go_next_window)
+(global-set-key (kbd "C-<prior>") 'go_prev_window)
+
+(global-set-key (kbd "C-<left>") 'switch-to-prev-buffer)
+(global-set-key (kbd "C-<right>") 'switch-to-next-buffer)
+
+(global-set-key (kbd "C-S-<left>") 'left-word)
+(global-set-key (kbd "C-S-<right>") 'right-word)
+
+(global-set-key (kbd "M-o") 'prelude-smart-open-line)
+(global-set-key (kbd "M-o") 'open-line)
+(global-set-key (kbd "C-a") 'prelude-move-beginning-of-line)
+(global-set-key (kbd "RET") 'newline-and-indent)
+
+(global-set-key (kbd "C-c i") 'clang-format-region)
+(global-set-key (kbd "C-S-f") 'clang-format-buffer)
+
 ; Global Ivy Bindings
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
@@ -29,12 +47,16 @@
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
 ;; Projectile
+(global-set-key (kbd "C-S-e") 'projectile-run-eshell)
+(global-set-key (kbd "C-S-p") 'projectile-switch-project)
 (global-set-key (kbd "C-S-n") 'projectile-find-file)
 (global-set-key (kbd "C-<tab>") 'projectile-find-other-file)
 (global-set-key (kbd "M-b") 'projectile-switch-to-buffer)
 (global-set-key (kbd "M-S-b") 'projectile-switch-to-buffer-other-window)
+(global-set-key (kbd "C-B") 'projectile-compile-project)
+(global-set-key (kbd "<f10>") 'projectile-run-project)
 (global-set-key (kbd "C-<f10>") 'projectile-test-project)
-(global-set-key (kbd "<f2>") 'projectile-speedbar-open-current-buffer-in-tree)
+(global-set-key (kbd "<f8>") 'neotree-project-dir)
 
 (global-unset-key (kbd "C-c r ."))
 (global-unset-key (kbd "C-c r ["))
@@ -43,19 +65,6 @@
                                (interactive)
                                (setq-local compilation-read-command nil)
                                (call-interactively 'compile)))
-(global-set-key (kbd "C-B") 'projectile-compile-project)
-(global-set-key (kbd "<f10>") 'projectile-run-project)
-
-(global-set-key (kbd "C-<next>") 'go_next_window)
-(global-set-key (kbd "C-<prior>") 'go_prev_window)
-(global-set-key (kbd "M-o") 'prelude-smart-open-line)
-(global-set-key (kbd "M-o") 'open-line)
-(global-set-key (kbd "C-a") 'prelude-move-beginning-of-line)
-(global-set-key (kbd "M-;") 'comment-dwim-2)
-(global-set-key (kbd "RET") 'newline-and-indent)
-
-(global-set-key (kbd "C-c i") 'clang-format-region)
-(global-set-key (kbd "C-S-f") 'clang-format-buffer)
 
 ;; C/C++
 (define-key c-mode-map [(?\M-\r)] 'company-complete)
