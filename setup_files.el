@@ -14,3 +14,6 @@
 ;; CMake mode
 (add-to-list 'auto-mode-alist '("CMakeLists\\.txt\\'" . cmake-mode))
 (add-to-list 'auto-mode-alist '("\\.cmake\\'" . cmake-mode))
+
+;; rust
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))

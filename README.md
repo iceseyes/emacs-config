@@ -36,6 +36,13 @@ systemctl --user start rdm.socket rdm-restore.service
 
 For Javascript install *Node.js*, than with *npm* install **tern** and **js-beautify**.
 
+For Rust install rust environment, then:
+
+```bash
+rustup component add rust-src
+cargo install racer rustfmt
+```
+
 Run Emacs
 
 ## Known problems
