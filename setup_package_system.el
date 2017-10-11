@@ -59,7 +59,7 @@
 (use-package flycheck-color-mode-line)
 (use-package flycheck-pos-tip)
 (use-package flycheck-rtags)
-(use-package flycheck-rust)
+;;(use-package flycheck-rust)
 
 ;; ivy
 (use-package counsel)
@@ -94,9 +94,9 @@
 (use-package cmake-font-lock)
 
 ;; Rust
-(use-package rust-mode)
-(use-package racer)
-(use-package cargo)
+;; (use-package rust-mode)
+;; (use-package racer)
+;; (use-package cargo)
 
 ;; Highlights undo, yank, search...
 (use-package volatile-highlights

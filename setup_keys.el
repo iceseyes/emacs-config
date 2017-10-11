@@ -113,5 +113,5 @@
   '(define-key css-mode-map (kbd "C-S-f") 'web-beautify-css))
 
 ;; Rust
-(eval-after-load 'rust-mode
-  (define-key rust-mode-map (kbd "C-S-f") 'rust-format-buffer))
+;; (eval-after-load 'rust-mode
+;;  (define-key rust-mode-map (kbd "C-S-f") 'rust-format-buffer))
