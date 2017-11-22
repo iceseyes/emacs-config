@@ -98,6 +98,9 @@
 (js2r-add-keybindings-with-prefix "C-c C-r")
 (define-key js2-mode-map [(?\M-\r)] 'company-complete)
 (define-key js2-mode-map (kbd "C-k") #'js2r-kill)
+(define-key js2-mode-map (kbd "C-S-<f10>") 'mocha-test-project)
+(define-key js2-mode-map (kbd "C-c m f") 'mocha-test-file)
+(define-key js2-mode-map (kbd "C-c m .") 'mocha-test-at-point)
 
 (define-key js-mode-map (kbd "M-.") nil)
 (define-key tern-mode-keymap (kbd "M-,") nil)
