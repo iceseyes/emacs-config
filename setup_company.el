@@ -20,3 +20,7 @@
 (add-hook
  'irony-mode-hook
  'company-irony-setup-begin-commands)
+
+(add-hook 'js2-mode-hook (lambda ()
+                           (tern-mode)
+                           (company-mode)))
