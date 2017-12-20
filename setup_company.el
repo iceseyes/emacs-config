@@ -5,6 +5,9 @@
 (setq company-idle-delay 0)
 (setq company-backends
       (delete 'company-semantic company-backends))
+(setq company-backends
+      (delete 'company-clang company-backends))
+
 
 (eval-after-load 'company
   '(add-to-list
