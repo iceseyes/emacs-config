@@ -2,7 +2,7 @@
 
 ;; Projectile
 (projectile-mode)
-(counsel-projectile-on)
+;;(counsel-projectile-mode)
 
 (setq projectile-enable-caching t)
 (setq projectile-project-compilation-cmd "")
@@ -18,7 +18,7 @@
 ;; neotree
 (setq neo-smart-open t)
 (setq projectile-switch-project-action 'neotree-projectile-action)
-
+(setq counsel-projectile-switch-project-action '(1 ("d" counsel-projectile-find-dir-action "open root")))
 
 (defun neotree-project-dir ()
   "Open NeoTree using the git root."
