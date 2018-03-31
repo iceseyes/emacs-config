@@ -93,6 +93,8 @@
 (define-key elpy-mode-map (kbd "M-n") 'elpy-rgrep-symbol)
 (define-key elpy-mode-map (kbd "M-<left>") 'pop-tag-mark)
 (define-key elpy-mode-map (kbd "C-S-N") 'elpy-find-file)
+(define-key elpy-mode-map (kbd "C-<left>") 'switch-to-prev-buffer)
+(define-key elpy-mode-map (kbd "C-<right>") 'switch-to-next-buffer)
 
 ;; JS/Web
 (js2r-add-keybindings-with-prefix "C-c C-r")

@@ -72,6 +72,7 @@
 ;; Python mode
 (use-package pyvenv)
 (use-package elpy)
+(use-package py-autopep8)
 
 ;; Web mode
 (use-package web-mode)
