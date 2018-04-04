@@ -23,6 +23,11 @@ For python install this packages
 easy_install --user rope jedi flake8 importmagic autopep8 yapf
 ```
 
+or just run `M-x elpy-config` inside emacs.
+
+After that you have to assure that `autopep8` is in the system path. On Ubuntu
+just run `sudo apt install python-autopep8`.
+
 Checkout rtags project, compile and install it (https://github.com/Andersbakken/rtags).
 
 Install SystemD Units for rdm:

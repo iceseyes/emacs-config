@@ -1,1 +1,2 @@
-(provide 'setup_python)
+(provide 'setup_elpy)
+
