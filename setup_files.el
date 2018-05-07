@@ -17,3 +17,4 @@
 
 ;; rust
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+(add-to-list 'auto-mode-alist '("\\.toml\\'" . toml-mode))

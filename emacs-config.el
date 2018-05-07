@@ -12,7 +12,7 @@
 (require 'setup_cpp)
 (require 'setup_gdb)
 (require 'setup_web)
-;;(require 'setup_rust)
+(require 'setup_rust)
 
 (require 'setup_snippets)
 (require 'setup_files)

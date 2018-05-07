@@ -15,6 +15,12 @@
                                   :run "npm start"
                                   :test-suffix ".spec")
 
+(projectile-register-project-type 'cargo '("cargo.toml")
+                                  :compile "cargo build"
+                                  :test "cargo test"
+                                  :run "cargo run"
+                                  :test-suffix ".spec")
+
 ;; neotree
 (setq neo-smart-open t)
 (setq projectile-switch-project-action 'neotree-projectile-action)

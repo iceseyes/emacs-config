@@ -5,7 +5,7 @@
 ;; (see below)
 (setq package-selected-packages
       (quote
-       (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode flycheck-rtags  company-rtags ac-rtags js2-mode pyvenvi cmake-mode cmake-font-lock counsel powerline npm-mode web-beautify company-tern company-jedi projectile neotree rust-mode flycheck-rust racer cargo indium mocha realgud)))
+       (markdown-mode flycheck-pos-tip flycheck-color-mode-line flycheck-irony less-css-mode web-mode iedit anzu ws-butler dtrt-indent clean-aindent-mode yasnippet undo-tree volatile-highlights rust-mode magit use-package rtags company-irony-c-headers company-irony irony clang-format dockerfile-mode yaml-mode flycheck-rtags  company-rtags ac-rtags js2-mode pyvenvi cmake-mode cmake-font-lock counsel powerline npm-mode web-beautify company-tern company-jedi projectile neotree rust-mode flycheck-rust racer cargo indium mocha realgud meson-mode toml-mode)))
 
 ;; Load Package module
 (require 'package)
@@ -43,6 +43,9 @@
 ;; projectile
 (use-package projectile)
 
+;; Meson
+(use-package meson-mode)
+
 ;; neotree
 (use-package neotree)
 
@@ -53,13 +56,14 @@
 (use-package company-rtags)
 (use-package company-tern)  ;; needs: npm -g install tern
 (use-package company-jedi)
+(use-package company-lsp)
 
 ;; flycheck
 (use-package flycheck-irony)
 (use-package flycheck-color-mode-line)
 (use-package flycheck-pos-tip)
 (use-package flycheck-rtags)
-;;(use-package flycheck-rust)
+(use-package flycheck-rust)
 
 ;; ivy
 (use-package counsel)
@@ -98,9 +102,10 @@
 (use-package cmake-font-lock)
 
 ;; Rust
-;; (use-package rust-mode)
-;; (use-package racer)
-;; (use-package cargo)
+(use-package rust-mode)
+(use-package racer)
+(use-package cargo)
+(use-package toml-mode)
 
 ;; Highlights undo, yank, search...
 (use-package volatile-highlights

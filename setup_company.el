@@ -24,3 +24,7 @@
 (add-hook 'js2-mode-hook (lambda ()
                            (tern-mode)
                            (company-mode)))
+
+(add-hook
+ 'meson-mode-hook
+ 'company-mode)
