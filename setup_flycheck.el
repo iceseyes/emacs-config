@@ -9,8 +9,5 @@
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
-(eval-after-load 'flycheck
-   '(add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
-
 (with-eval-after-load 'flycheck
   (flycheck-pos-tip-mode))
